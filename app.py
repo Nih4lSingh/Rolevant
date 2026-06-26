@@ -28,4 +28,3 @@ if st.button("Evaluate"):
         st.write("Roles best suited for you")
         for i in range(5):
             st.metric(suggested_roles[i][1],round(suggested_roles[i][0]*100))
-
