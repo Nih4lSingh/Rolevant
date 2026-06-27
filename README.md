@@ -1,16 +1,22 @@
 # Rolevant
-Basic feature: 
-1) Upload a resume (PDF) and extract text automatically
-2) Paste any job description and get a match score (0–100%)
-3) Keyword gap analysis — shows exactly which skills from the JD are missing in the resume
+AI-powered career discovery platform that maps your skills to roles 
+across multiple industries — and tells you exactly what's missing.
 
-Unique features to be added:
-1) Reads the resume and ranks all roles by compatibility
-2) Covers tech, finance, healthcare, education, management, and creative fields
-3) Data-driven role profiles built from real job postings (v2), not just hardcoded keywords
+---
 
-What it does NOT have yet (things worth adding later):
-1) No section-wise analysis, it reads the resume as one blob, not separating skills vs projects vs education
-2) No resume improvement suggestions, telling you what's missing but doesn't tell you how to fix it
-3) No user accounts or history, every session starts fresh
-4) No support for non-PDF formats like DOCX
+## Versions
+
+### V1 — Foundation
+- PDF resume extraction with text cleaning
+- Semantic matching using sentence embeddings (all-MiniLM-L6-v2)
+- Keyword gap analysis
+- Hardcoded role profiles for 6 industries
+
+### V2 — Data-Driven (current)
+- 47 roles extracted from 7,473 real LinkedIn job postings (2023-2024)
+- Precomputed role embeddings stored in JSON for faster inference
+- Expanded industry coverage across tech, finance, healthcare, HR, sales, legal and more
+
+### V3 — Planned
+- NER-based skill extraction for cleaner, more precise role embeddings
+- FastAPI backend for production deployment
