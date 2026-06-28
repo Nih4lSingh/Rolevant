@@ -21,10 +21,15 @@ identifies exactly which skills are missing for each role.
 ### V1 structure
 .
 ├── README.md          # Project documentation
+
 ├── app.py             # Main Streamlit application
+
 ├── extractor.py       # Text extractor logic
+
 ├── matcher.py         # Matching and scoring logic
+
 ├── requirements.txt   # Project dependencies
+
 └── roles.py           # Hardcoded keywords for 6 roles
 
 ### V2 — Data-Driven (current)
@@ -36,11 +41,17 @@ identifies exactly which skills are missing for each role.
 ### V2 structure
 .
 ├── README.md             # Project documentation
+
 ├── app.py                # Main Streamlit application
+
 ├── extractor.py          # Text extractor logic
+
 ├── matcher.py            # Matching and scoring logic
+
 ├── preprocessing.ipynb   # Data preprocessing pipeline
+
 ├── requirements.txt      # Project dependencies
+
 └── role_data.json        # Precomputed embeddings and keywords for 47 roles
 
 ### How are role profiles built?
