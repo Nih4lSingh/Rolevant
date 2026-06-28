@@ -4,7 +4,11 @@ across multiple industries — and tells you exactly what's missing.
 
 ---
 ## How it works
-Rolevant extracts text from your uploaded PDF resume, converts it into a semantic embedding using sentence-transformers, and compares it against recomputed embeddings for 47 roles built from real LinkedIn job postings. Cosine similarity produces a match score, and TF-IDF keyword analysis identifies exactly which skills are missing for each role.
+Rolevant extracts text from your uploaded PDF resume, converts it into 
+a semantic embedding using sentence-transformers, and compares it against 
+precomputed embeddings for 47 roles built from real LinkedIn job postings. 
+Cosine similarity produces a match score, and TF-IDF keyword analysis 
+identifies exactly which skills are missing for each role.
 ---
 ## Versions
 
