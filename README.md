@@ -33,6 +33,13 @@ identifies exactly which skills are missing for each role.
 
 └── roles.py           # Hardcoded keywords for 6 roles
 
+### Basic UI
+<img width="2430" height="1402" alt="image" src="https://github.com/user-attachments/assets/747496c4-c199-4a9d-8eaa-5dda3641c71e" />
+### 6 role options
+<img width="1556" height="874" alt="image" src="https://github.com/user-attachments/assets/75e7fd12-0d54-4d5d-b143-7e93d39fc5df" />
+### missing keywords and top 5 suggestions
+<img width="1516" height="1364" alt="image" src="https://github.com/user-attachments/assets/bd1fdf88-6c1b-409e-90b7-aa5ba6c85832" />
+
 ### V2 — Data-Driven (current)
 - 47 roles extracted from 7,473 real LinkedIn job postings (2023-2024)
 - Semantic matching using sentence embeddings (all-mpnet-base-v2)
@@ -56,11 +63,10 @@ identifies exactly which skills are missing for each role.
 
 └── role_data.json        # Precomputed embeddings and keywords for 47 roles
 
-Basic UI
-<img width="2430" height="1402" alt="image" src="https://github.com/user-attachments/assets/747496c4-c199-4a9d-8eaa-5dda3641c71e" />
-47 role options
+
+### 47 role options
 <img width="2422" height="1382" alt="image" src="https://github.com/user-attachments/assets/76bc6330-2ce8-45bb-9690-4bc1e9451700" />
-missing keywords and top 5 suggestions
+### missing keywords and top 5 suggestions
 <img width="2348" height="1384" alt="image" src="https://github.com/user-attachments/assets/2d340604-dff7-42f6-8e15-89716c0ec8ef" />
 
 
