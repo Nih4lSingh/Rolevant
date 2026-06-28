@@ -2,13 +2,16 @@ import streamlit as st
 import tempfile
 from extractor import extract_text_pdf
 from matcher import match_role,recommend_roles
-from roles import role_profiles
+import json
+
+with open('role_data.json','r') as f:
+    data=json.load(f)
 
 st.title("Rolevant")
 
 uploaded_file=st.file_uploader("Upload your Resume",type="pdf")
 
-role=st.selectbox("Select a role (optional)",["None"]+list(role_profiles.keys()))
+role=st.selectbox("Select a role (optional)",["None"]+list(data.keys()))
 
 if st.button("Evaluate"):
     if uploaded_file is None:
@@ -28,3 +31,4 @@ if st.button("Evaluate"):
         st.write("Roles best suited for you")
         for i in range(5):
             st.metric(suggested_roles[i][1],round(suggested_roles[i][0]*100))
+
