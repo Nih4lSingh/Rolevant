@@ -20,6 +20,7 @@ identifies exactly which skills are missing for each role.
 
 ### V1 structure
 .
+
 ├── README.md          # Project documentation
 
 ├── app.py             # Main Streamlit application
@@ -40,6 +41,7 @@ identifies exactly which skills are missing for each role.
 
 ### V2 structure
 .
+
 ├── README.md             # Project documentation
 
 ├── app.py                # Main Streamlit application
