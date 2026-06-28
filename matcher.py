@@ -1,8 +1,11 @@
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-from roles import role_profiles
+import json
+import numpy as np
+with open('role_data.json','r') as f:
+    data=json.load(f)
 
-model=SentenceTransformer('all-MiniLM-L6-v2')
+model=SentenceTransformer('all-mpnet-base-v2')
 
 def get_embedding(text):
     return model.encode(text)
@@ -10,18 +13,17 @@ def get_embedding(text):
 def recommend_roles(resume_text):
     resume_vec=get_embedding(resume_text)
     scores=[]
-    for role,keywords in role_profiles.items():
-        role_vec=get_embedding(keywords)
-        score=cosine_similarity([resume_vec],[role_vec])[0][0]
+    for role,profile in data.items():
+        score=cosine_similarity([resume_vec],[np.array(profile['embeddings'])])[0][0]
         scores.append([score,role])
     scores.sort(reverse=True)
     return scores[:5]
 
 def match_role(resume_text,role_name):
     resume_vec=get_embedding(resume_text)
-    role_vec=get_embedding(role_profiles[role_name])
+    role_vec=np.array(data[role_name]['embeddings'])
     resume_set=set(resume_text.lower().split())
-    role_set=set(role_profiles[role_name].lower().split())
+    role_set=set(data[role_name]['keywords'])
     missing_keywords=role_set-resume_set
     score=cosine_similarity([resume_vec],[role_vec])[0][0]
     return score,missing_keywords
