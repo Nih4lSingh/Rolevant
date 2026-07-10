@@ -25,10 +25,9 @@ if st.button("Evaluate"):
             score,missing_keywords=match_role(resume_text,role)
             st.write(f"Your Resume is a {round(score*100)}% match for {role}")
             if missing_keywords:
-                st.write("Missing Keywords:")
+                st.write("Companies also Look for:")
                 st.write(', '.join(missing_keywords))
         suggested_roles=recommend_roles(resume_text)
         st.write("Roles best suited for you")
         for i in range(5):
-            st.metric(suggested_roles[i][1],round(suggested_roles[i][0]*100))
-
+            st.metric(suggested_roles[i][1])
