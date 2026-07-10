@@ -30,4 +30,4 @@ if st.button("Evaluate"):
         suggested_roles=recommend_roles(resume_text)
         st.write("Roles best suited for you")
         for i in range(5):
-            st.metric(suggested_roles[i][1])
+            st.metric(suggested_roles[i][1],'')
