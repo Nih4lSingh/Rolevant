@@ -2,6 +2,7 @@
 
 > AI-powered career discovery platform that maps your skills to roles across multiple industries — and tells you exactly what companies look for.
 
+**🔗 Live Demo:** [https://rolevant.streamlit.app/](https://rolevant.streamlit.app/)
 
 ---
 
@@ -21,7 +22,7 @@ Rolevant reads your resume and tells you two things:
 3. Click **Evaluate**
 4. Get a semantic match score, top 5 recommended roles, and a list of skills companies commonly look for
 
-Rolevant extracts text from your resume, converts it into a semantic embedding using `sentence-transformers`, and compares it against precomputed role embeddings built from 7,473 real LinkedIn job postings. Cosine similarity produces a match score, and NER-based skill extraction identifies relevant skills per role.
+Rolevant extracts text from your resume, converts it into a semantic embedding using `sentence-transformers`, and compares it against precomputed role embeddings built from 7,473 real LinkedIn job postings. A normalized cosine similarity produces the match score, and NER-based skill extraction — validated with an LLM — identifies relevant skills per role.
 
 ---
 
@@ -30,7 +31,7 @@ Rolevant extracts text from your resume, converts it into a semantic embedding u
 | Layer | Tool |
 |---|---|
 | Embeddings | sentence-transformers (`all-mpnet-base-v2`) |
-| Similarity | scikit-learn cosine similarity |
+| Similarity | scikit-learn cosine similarity (normalized) |
 | Skill Extraction | NER (`algiraldohe/lm-ner-linkedin-skills-recognition`) |
 | LLM Validation | Groq API (LLaMA 3.3 70B) |
 | PDF Parsing | PyMuPDF |
