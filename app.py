@@ -23,10 +23,11 @@ if st.button("Evaluate"):
         resume_text=extract_text_pdf(tmp_path)
         if role!="None":
             score,missing_keywords=match_role(resume_text,role)
-            st.write(f"Your Resume is a {round(score*100)}% match for {role}")
-            if missing_keywords:
-                st.write("Companies also Look for:")
-                st.write(', '.join(missing_keywords))
+            col1, col2 = st.columns(2)
+            with col1:
+                st.metric("Match Score", f"{round(score*100)}%")
+            with col2:
+                st.write("Companies also look for:",missing_keywords)
         suggested_roles=recommend_roles(resume_text)
         st.write("Roles best suited for you")
         for i in range(5):
