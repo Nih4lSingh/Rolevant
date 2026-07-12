@@ -8,5 +8,4 @@ def extract_text_pdf(pdf_path):
         text=page.get_text()
         all_text+=text
     clean=re.sub(r'[^\x00-\x7F,]+',' ',all_text)
-    ' '.join(clean.split())
     return clean

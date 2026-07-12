@@ -1,3 +1,5 @@
+import re
+
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
@@ -22,8 +24,9 @@ def recommend_roles(resume_text):
 def match_role(resume_text,role_name):
     resume_vec=get_embedding(resume_text)
     role_vec=np.array(data[role_name]['embeddings'])
+    resume_text = re.sub(r'[^\w\s]', '', resume_text)
     resume_set=set(resume_text.lower().split())
-    role_set=set(data[role_name]['keywords'])
+    role_set={keyword.lower() for keyword in data[role_name]['keywords']}
     missing_keywords=role_set-resume_set
     score=cosine_similarity([resume_vec],[role_vec])[0][0]
     return score,missing_keywords
