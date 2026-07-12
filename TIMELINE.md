@@ -134,6 +134,10 @@ Skills are extracted from 7,473 real LinkedIn job postings using a LinkedIn-trai
 └── role_data.json             # Precomputed embeddings and keywords for 47 roles
 ```
 
+**Screenshots**
+UI update
+<img width="1608" height="1296" alt="image" src="https://github.com/user-attachments/assets/ade2e11b-c777-4c35-8f7b-f7a64d5b9cb7" />
+
 ---
 
 ## V4 — Planned
