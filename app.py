@@ -22,11 +22,14 @@ def colored_progress_bar(percent):
             <div style="background-color:{color}; width:{percent}%; height:100%; border-radius:8px;"></div>
         </div>
     """, unsafe_allow_html=True)
-
 if st.button("**Evaluate**"):
     if uploaded_file is None:
         st.warning("**Please upload your resume before proceeding**")
     else:
+        st.warning("""
+**Please Note**
+
+Displayed percentages represent relative semantic similarity between your resume and each role. They are intended for comparison only and do not indicate candidate suitability or hiring likelihood.""")
         with tempfile.NamedTemporaryFile(delete=False,suffix=".pdf") as tmp:
             tmp.write(uploaded_file.read())
             tmp_path=tmp.name
@@ -35,13 +38,13 @@ if st.button("**Evaluate**"):
             score,missing_keywords=match_role(resume_text,role)
             col1, col2 = st.columns(2)
             with col1:
-                score=max(0, min(100, round((score-0.3)/(0.45) * 100)))
+                score=max(0,min(100,round(score*100)))
                 if score>65:
-                    st.metric("**Match Score**", f"**:green[{score}%]**")
+                    st.metric("**Role-Resume Similarity**", f"**:green[{score}%]**")
                 elif score>50:
-                    st.metric("**Match Score**", f"**:blue[{score}%]**")
+                    st.metric("**Role-Resume Similarity**", f"**:blue[{score}%]**")
                 else:
-                    st.metric("**Match Score**", f"**:gray[{score}%]**")
+                    st.metric("**Role-Resume Similarity**", f"**:gray[{score}%]**")
                 colored_progress_bar(score)
             st.divider()
             with col2:
@@ -62,17 +65,22 @@ if st.button("**Evaluate**"):
                 
         suggested_roles=recommend_roles(resume_text)
         st.write("**Recommended Roles Based on Your Resume:**")
+        cola, colb, colc = st.columns(3)
+        with cola:
+            st.markdown("**Role**")
+        with colc:
+            st.markdown("**Role-Resume Similarity**")
         for i in range(5):
             cola, colb, colc = st.columns(3)
-            score=max(0, min(100, round((suggested_roles[i][0]-0.3)/(0.45) * 100)))
+            score=max(0,min(100,round(suggested_roles[i][0]*100)))
             with cola:
                 st.markdown(f"**{suggested_roles[i][1]}**")
             with colb:
                 colored_progress_bar(score)
             with colc:
                 if score>65:
-                    st.markdown(f":green[{score}%] match")
-                elif score>50:
-                    st.markdown(f":blue[{score}%] match")
+                    st.markdown(f":green[{score}%]")
+                elif score>45:
+                    st.markdown(f":blue[{score}%]")
                 else:
-                    st.markdown(f":gray[{score}%] match")
+                    st.markdown(f":gray[{score}%]")
