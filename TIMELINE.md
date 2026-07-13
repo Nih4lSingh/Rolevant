@@ -104,6 +104,8 @@ Missing keywords and top 5 suggestions
 - Added LLM validation via Groq API (LLaMA 3.3 70B) to remove noise and semantic duplicates
 - Sentence-level averaged embeddings for more representative role vectors
 - Keywords now represent actual skills, not frequent words
+- Used normalized cosine similarity for score calculation
+- UI update
 
 **Tech Stack**
 
@@ -136,12 +138,12 @@ Skills are extracted from 7,473 real LinkedIn job postings using a LinkedIn-trai
 
 **Screenshots**
 UI update
-<img width="1608" height="1296" alt="image" src="https://github.com/user-attachments/assets/ade2e11b-c777-4c35-8f7b-f7a64d5b9cb7" />
+<img width="1144" height="1324" alt="image" src="https://github.com/user-attachments/assets/333e05cc-bcfe-4e63-88da-5bc370bee660" />
+
 
 ---
 
 ## V4 — Planned
 
 - FastAPI backend for production deployment
-- React frontend for a more polished user experience
 - Expanded role coverage using additional datasets
