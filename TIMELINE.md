@@ -138,7 +138,9 @@ Skills are extracted from 7,473 real LinkedIn job postings using a LinkedIn-trai
 
 **Screenshots**
 UI update
-<img width="1144" height="1324" alt="image" src="https://github.com/user-attachments/assets/333e05cc-bcfe-4e63-88da-5bc370bee660" />
+<img width="1180" height="1084" alt="image" src="https://github.com/user-attachments/assets/cb0f6b4a-335b-4d02-9b22-84899aff3b03" />
+<img width="1134" height="458" alt="image" src="https://github.com/user-attachments/assets/29a652d0-93d4-4f7a-934d-cb3485f448df" />
+
 
 
 ---
