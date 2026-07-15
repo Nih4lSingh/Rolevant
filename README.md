@@ -10,7 +10,7 @@
 
 Rolevant reads your resume and tells you two things:
 
-1. **Which roles suit you best** — ranked across 47 roles spanning tech, finance, healthcare, HR, sales, legal, and more
+1. **Which roles suit you best** — ranked across 50 roles spanning tech, finance, healthcare, HR, sales, legal, and more
 2. **What skills companies look for** — so you know exactly what to learn next
 
 ---
